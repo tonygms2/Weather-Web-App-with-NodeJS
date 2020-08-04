@@ -14,7 +14,8 @@ app.get("/",(req,res)=>{
 app.post("/",(req,res)=>{
     
     var cityName = req.body.cityName;
-    const endPoint = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+",bd&appid=48cfce5981ea65a0395f806f0b801534&units=metric";
+    const key = "48cfce5981ea65a0395f806f0b801534";
+    const endPoint = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+",bd&appid="+key+"&units=metric";
     var icon ;
     https.get(endPoint,(response)=>{
         response.on("data",(data)=>{
